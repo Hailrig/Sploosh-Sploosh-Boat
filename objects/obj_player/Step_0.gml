@@ -22,7 +22,7 @@ if (y = 192){
 }
 
 if ((y < 192) and (y+vspeed>192) and (crashDown == false)){
-	vspeed = vspeed/3;
+	vspeed = vspeed/2;
 	if ((vspeed < .4) and (vspeed > -.4)){
 		y = 192;
 		vspeed = 0;
@@ -30,6 +30,15 @@ if ((y < 192) and (y+vspeed>192) and (crashDown == false)){
 	crashDown = true
 }
 
+//animations
+
+if (y <= 192){
+	image_index = 0;
+}
+if (image_index == 0 and y > 194 and alarm_get(0) <= 0){
+	alarm_set(0, 20);
+	image_index = 1;
+}
 
 if (vspeed > 0){
 	this = instance_place(x, y+1, obj_floor)
