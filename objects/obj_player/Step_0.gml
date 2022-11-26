@@ -53,5 +53,9 @@ if (vspeed > 0){
 }
 
 if (place_meeting(x, y, obj_enemy)){
-	room_restart();
+	die();
+}
+
+function die(){
+	room_goto(rm_score);
 }
