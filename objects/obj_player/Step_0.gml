@@ -20,7 +20,7 @@ if (y < 192){
 	gravity = .13;
 	crashDown = false;
 }
-if (y = 192){
+if (y == 192){
 	gravity = 0;
 }
 
@@ -43,6 +43,16 @@ if (image_index == 0 and vspeed > 1.1 and alarm_get(0) <= 0 and pressed >= 1){
 	image_index = 1;
 	pressed--;
 }
+
+if ((y == 192) and (wake == noone)){
+	wake = instance_create_depth(x, y, -1, obj_wake);
+} 
+if ((wake != noone) and (y > 193) or (y < 191)){
+	instance_destroy(wake);
+	wake = noone;
+}
+
+//end animations
 
 if (vspeed > 0){
 	this = instance_place(x, y+1, obj_floor)
