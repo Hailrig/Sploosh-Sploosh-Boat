@@ -5,13 +5,16 @@ if (keyboard_check(vk_space)) {
 } else {
 	goDown = false;
 }
+if (keyboard_check_pressed(vk_space)){
+	pressed = 2;
+}
 
 if (goDown and y >= 192){
 	vspeed = swimSpeed;
 }
 
 if (y > 192){
-	gravity = -.3;
+	gravity = -.2;
 }
 if (y < 192){
 	gravity = .13;
@@ -32,12 +35,13 @@ if ((y < 192) and (y+vspeed>192) and (crashDown == false)){
 
 //animations
 
-if (y <= 192){
+if (vspeed <= 0){
 	image_index = 0;
 }
-if (image_index == 0 and y > 194 and alarm_get(0) <= 0){
+if (image_index == 0 and vspeed > 1.1 and alarm_get(0) <= 0 and pressed >= 1){
 	alarm_set(0, 20);
 	image_index = 1;
+	pressed--;
 }
 
 if (vspeed > 0){
