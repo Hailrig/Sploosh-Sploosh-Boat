@@ -1,26 +1,80 @@
 /// @desc Spawn Timer
 
+trandom = irandom_range(60, 100);
+alarm_set(0, trandom);
+
 rand = irandom(4)
 
 switch (rand){
 	case 0:
-	instance_create_depth(600, 288, 1, obj_island);
+	if (spawns[rand] != 1){
+		for (x = 0; x < array_length(spawns); x++){
+			if (x != rand)
+				spawns[x] = 0;
+			else
+				spawns[x] = 1;
+		}
+		instance_create_depth(600, 288, 1, obj_island);
+	} else {
+		alarm_set(0, 1);
+	}
 	break;
+	
 	case 1:
-	randTwo = random_range(30, 150);
-	instance_create_depth(550, randTwo, 1, obj_plane);
+	if (spawns[rand] != 1){
+		for (x = 0; x < array_length(spawns); x++){
+			if (x != rand)
+				spawns[x] = 0;
+			else
+				spawns[x] = 1;
+		}
+		randTwo = random_range(30, 150);
+		instance_create_depth(550, randTwo, 1, obj_plane);
+	} else {
+		alarm_set(0, 1);
+	}
 	break;
+	
 	case 2:
-	randTwo = random_range(220, 270);
-	instance_create_depth(550, randTwo, 1, obj_shark);
+	if (spawns[rand] != 1){
+		for (x = 0; x < array_length(spawns); x++){
+			if (x != rand)
+				spawns[x] = 0;
+			else
+				spawns[x] = 1;
+		}
+		randTwo = random_range(220, 270);
+		instance_create_depth(550, randTwo, 1, obj_shark);
+	} else {
+		alarm_set(0, 1);
+	}
 	break;
+	
 	case 3:
-	instance_create_depth(550, 192, 1, obj_buoy);
+	if (spawns[rand] != 1){
+		for (x = 0; x < array_length(spawns); x++){
+			if (x != rand)
+				spawns[x] = 0;
+			else
+				spawns[x] = 1;
+		}
+		instance_create_depth(550, 192, 1, obj_buoy);
+	} else {
+		alarm_set(0, 1);
+	}
 	break;
+	
 	case 4:
-	instance_create_depth(550, 115, 1, obj_baloon);
+	if (spawns[rand] != 1){
+		for (x = 0; x < array_length(spawns); x++){
+			if (x != rand)
+				spawns[x] = 0;
+			else
+				spawns[x] = 1;
+		}
+		instance_create_depth(550, 130, 1, obj_baloon);
+	} else {
+		alarm_set(0, 1);
+	}
 	break;
 }
-
-trandom = irandom_range(30, 60);
-alarm_set(0, trandom);
