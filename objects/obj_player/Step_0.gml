@@ -47,8 +47,8 @@ if (image_index == 0 and vspeed > 1.1 and alarm_get(0) <= 0 and pressed >= 1){
 if ((y == 192) and (wake == noone)){
 	wake = instance_create_depth(x, y, -1, obj_wake);
 } 
-if ((wake != noone) and (y > 193) or (y < 191)){
-	instance_destroy(wake);
+if ((wake != noone) and ((y > 193) or (y < 191))){
+	wake.die();
 	wake = noone;
 }
 

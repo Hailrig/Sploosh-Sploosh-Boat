@@ -43,7 +43,7 @@ switch (rand){
 			else
 				spawns[x] = 1;
 		}
-		randTwo = random_range(220, 270);
+		randTwo = random_range(220, 280);
 		instance_create_depth(550, randTwo, 1, obj_shark);
 	} else {
 		alarm_set(0, 1);

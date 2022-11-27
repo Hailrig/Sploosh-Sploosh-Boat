@@ -6,6 +6,7 @@
     {"id":{"name":"obj_baloon","path":"objects/obj_baloon/obj_baloon.yy",},"order":5,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"spr_island","path":"sprites/spr_island/spr_island.yy",},"order":8,},
+    {"id":{"name":"snd_backgroundTrack","path":"sounds/snd_backgroundTrack/snd_backgroundTrack.yy",},"order":0,},
     {"id":{"name":"spr_floor","path":"sprites/spr_floor/spr_floor.yy",},"order":3,},
     {"id":{"name":"spr_wake","path":"sprites/spr_wake/spr_wake.yy",},"order":10,},
     {"id":{"name":"obj_island","path":"objects/obj_island/obj_island.yy",},"order":8,},
@@ -24,6 +25,7 @@
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},"order":1,},
     {"id":{"name":"obj_buoy","path":"objects/obj_buoy/obj_buoy.yy",},"order":6,},
     {"id":{"name":"obj_spawner","path":"objects/obj_spawner/obj_spawner.yy",},"order":3,},
+    {"id":{"name":"spr_wakeDie","path":"sprites/spr_wakeDie/spr_wakeDie.yy",},"order":11,},
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},"order":0,},
   ],
   "Options": [
