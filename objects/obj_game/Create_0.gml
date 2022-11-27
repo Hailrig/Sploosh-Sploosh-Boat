@@ -3,6 +3,10 @@
 pastScore = 0;
 
 if (room == rm_main){
+	audio_play_sound(snd_backgroundTrack, 1, 1);
+}
+
+if (room == rm_main){
 	global.startTime = get_timer()/1000000;
 	global.currentTime = get_timer()/1000000;
 }
