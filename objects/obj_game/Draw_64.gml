@@ -7,9 +7,10 @@ if (room == rm_main){
 if (room == rm_score){
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_text(256, 100, "Score: " + string(time));
-	draw_text(256, 150, "Previous best score: " + string(pastScore));
-	draw_text(256, 200, "Press escape to quit, or enter to play again!");
+	draw_text(256, 50, "Score: " + string(time) + " feet.");
+	draw_text(256, 100, "Previous best score: " + string(pastScore) + " feet.");
+	draw_text(256, 150, "Press space to quit, or enter to play again!");
+	draw_text(256, 250, "Music by Bensound");
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 }

@@ -72,7 +72,7 @@ switch (rand){
 			else
 				spawns[x] = 1;
 		}
-		instance_create_depth(550, 130, 1, obj_baloon);
+		instance_create_depth(550, 135, 1, obj_baloon);
 	} else {
 		alarm_set(0, 1);
 	}

@@ -23,6 +23,7 @@
     {"id":{"name":"spr_smallSplash","path":"sprites/spr_smallSplash/spr_smallSplash.yy",},"order":14,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":7,},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"order":7,},
+    {"id":{"name":"snd_blam","path":"sounds/snd_blam/snd_blam.yy",},"order":1,},
     {"id":{"name":"obj_blam","path":"objects/obj_blam/obj_blam.yy",},"order":12,},
     {"id":{"name":"spr_smallJump","path":"sprites/spr_smallJump/spr_smallJump.yy",},"order":15,},
     {"id":{"name":"spr_baloon","path":"sprites/spr_baloon/spr_baloon.yy",},"order":6,},

@@ -8,7 +8,7 @@ if (room == rm_main){
 }
 
 if (room == rm_score){
-	if (keyboard_check(vk_enter)){
+	if (keyboard_check(vk_space)){
 		room_goto(rm_main);
 	}
 }
