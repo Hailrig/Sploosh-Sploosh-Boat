@@ -25,10 +25,11 @@ if (y == 192){
 }
 
 if ((y < 192) and (y+vspeed>192) and (crashDown == false)){
-	vspeed = vspeed/2;
 	if ((vspeed < .4) and (vspeed > -.4)){
 		y = 192;
 		vspeed = 0;
+	} else {
+		vspeed = vspeed/2;
 	}
 	crashDown = true
 }
@@ -44,12 +45,34 @@ if (image_index == 0 and vspeed > 1.1 and alarm_get(0) <= 0 and pressed >= 1){
 	pressed--;
 }
 
-if ((y == 192) and (wake == noone)){
+if ((y < 193) and (y > 191) and (wake == noone) and (vspeed > -.02) and (vspeed < .02)){
 	wake = instance_create_depth(x, y, -1, obj_wake);
 } 
 if ((wake != noone) and ((y > 193) or (y < 191))){
-	wake.die();
+	if (instance_exists(wake)){ 
+		wake.die();
+	}
 	wake = noone;
+}
+
+if ((y < 192) and (y + vspeed >= 192) and (vspeed >= 1.5)) {
+	water = instance_create_depth(x, y, -1, obj_splash)
+	water.sprite_index = spr_bigSplash
+}
+
+if ((y < 192) and (y + vspeed >= 192) and (vspeed < 1.5) and (vspeed > .1)) {
+	water = instance_create_depth(x, y, -1, obj_splash)
+	water.sprite_index = spr_smallSplash
+}
+
+if ((y > 192) and (y + vspeed <= 192) and (vspeed <= -1.5)) {
+	water = instance_create_depth(x, y, -1, obj_splash)
+	water.sprite_index = spr_bigJump
+}
+
+if ((y > 192) and (y + vspeed <= 192) and (vspeed > -1.5) and (vspeed < -.1)) {
+	water = instance_create_depth(x, y, -1, obj_splash)
+	water.sprite_index = spr_smallJump
 }
 
 //end animations
@@ -67,5 +90,13 @@ if (place_meeting(x, y, obj_enemy)){
 }
 
 function die(){
-	room_goto(rm_score);
+	
+	if (wake != noone){
+		if (instance_exists(wake)){ 
+			wake.die();
+		}
+		wake = noone;
+	}
+	instance_create_depth(x, y, -1, obj_blam);
+	instance_destroy();
 }
